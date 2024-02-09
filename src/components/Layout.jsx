@@ -1,11 +1,11 @@
 import React from "react";
-import CustomNavbar from "./Navbar";
+import CustomNavbar from "./CustomNavbar";
 
 const Layout = (props) => {
   return (
     <>
       <CustomNavbar />
-      {props.children}
+      <div className="main">{props.children}</div>
     </>
   );
 };
