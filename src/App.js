@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+
 import {
   BrowserRouter,
   Routes,
@@ -7,9 +9,12 @@ import {
 } from "react-router-dom";
 import SignIn from "./pages/SignIn";
 import Home from "./pages/Home";
-import Landing from "./pages/Landing";
+import Dashboard from "./pages/dashboard/Dashboard";
+import AuthContext from "./store/auth-context";
+import AuthService from "./services/auth.service";
+import Questionnaire from "./pages/dashboard/Questionnaire";
 
-const ProtectedRoute = ({ isAllowed, redirectPath = "/landing", children }) => {
+const ProtectedRoute = ({ isAllowed, redirectPath = "/home", children }) => {
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
   }
@@ -17,20 +22,30 @@ const ProtectedRoute = ({ isAllowed, redirectPath = "/landing", children }) => {
 };
 
 function App() {
-  const user = {
-    id: "1",
-    name: "mou",
-    roles: ["admin", "user"],
-  };
+  const authCtx = useContext(AuthContext);
+  useEffect(() => {
+    if (!authCtx.isLoggedIn) return;
+    AuthService.getUserDetails()
+      .then((res) => {
+        authCtx.updateUserDetails(res.user);
+      })
+      .catch((err) => {
+        authCtx.logout();
+      });
+  }, [authCtx.isLoggedIn]);
+  console.log(authCtx);
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route index element={<Landing />} />
-          <Route path="landing" element={<Landing />} />
-          <Route path="login" element={<SignIn />} />
-          <Route element={<ProtectedRoute isAllowed={!!user} />}>
-            <Route path="home" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route element={<ProtectedRoute isAllowed={!authCtx.isLoggedIn} />}>
+            <Route path="login" element={<SignIn />} />
+          </Route>
+          <Route element={<ProtectedRoute isAllowed={!!authCtx.isLoggedIn} />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="dashboard/questionnaire" element={<Questionnaire />} />
           </Route>
           {/* 
           /*}

@@ -13,6 +13,7 @@ body {
   --color-lighter: #ffe5e5;
 
   --color-info: #818181;
+  --color-error: rgb(168, 73, 73);
 
   --border-radius: 8px;
 }
@@ -22,9 +23,7 @@ body,
 .App {
   height: 100%;
 }
-.App {
-  background-color: var(--color-lighter);
-}
+
 .form-control {
   border-radius: 0;
   border: none;
@@ -46,4 +45,8 @@ body,
 .btn:hover,
 .btn:focus {
   background-color: var(--color-secondary);
+}
+
+.info {
+  color: var(--color-info);
 }

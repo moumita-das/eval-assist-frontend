@@ -1,0 +1,99 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+  margin-top: 2em;
+  background-color: transparent;
+  .section {
+    display: flex;
+    align-items: center;
+    .left-content {
+      width: 60%;
+      .inverted-triangle-banner {
+        cursor: pointer;
+        width: 20em;
+        height: 3em;
+        background-color: var(--color-secondary);
+        color: white;
+        margin-bottom: 1.4em;
+        padding: 0.8em;
+        font-weight: 500;
+        font-size: 1.2em;
+        background-image: linear-gradient(-45deg, white 25px, transparent 25px),
+          linear-gradient(-135deg, white 25px, transparent 25px),
+          linear-gradient(-45deg, white 50px, transparent 50px),
+          linear-gradient(-135deg, white 50px, transparent 50px);
+
+        &:hover {
+          width: 24em;
+          background-image: linear-gradient(
+              -45deg,
+              white 25px,
+              transparent 25px
+            ),
+            linear-gradient(-135deg, white 25px, transparent 25px),
+            linear-gradient(
+              -45deg,
+              var(--color-secondary) 40px,
+              transparent 40px
+            ),
+            linear-gradient(
+              -135deg,
+              var(--color-secondary) 40px,
+              transparent 40px
+            ),
+            linear-gradient(-45deg, white 50px, transparent 50px),
+            linear-gradient(-135deg, white 50px, transparent 50px);
+        }
+      }
+    }
+    .right-content {
+      width: 40%;
+      height: 16em;
+      padding: 0em 2em;
+      .wrapper {
+        height: 16em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: solid 2px var(--color-info);
+        border-radius: var(--border-radius);
+        padding: 1.2em;
+        .img-bg {
+          height: 10em;
+          width: 10em;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+        .info {
+          width: 16em;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.questionnaire-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+  margin-top: 1em;
+  background-color: transparent;
+  .header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    .hr {
+      flex: 1;
+      border: solid 1px black;
+      height: 0;
+    }
+    h3 {
+      flex: 2;
+    }
+  }
+}
