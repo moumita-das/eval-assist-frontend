@@ -1,0 +1,40 @@
+.editor-menubar {
+    background-color: #fafafa;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 2px -4px 4px -1px;
+
+    .btn {
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0.2em 1em;
+
+
+        &.is-active {
+            background-color: rgb(214, 214, 214);
+        }
+
+    }
+
+
+}
+
+
+.tiptap {
+    border: solid 1px #fafafa;
+    border-top: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    &:focus-visible {
+        outline: 0;
+        border-top: 0;
+        padding: 1em;
+    }
+
+    p {
+        margin: 0;
+
+        &:focus-visible {
+            outline: 0;
+        }
+    }
+}

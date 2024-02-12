@@ -27,6 +27,7 @@ function App() {
     if (!authCtx.isLoggedIn) return;
     AuthService.getUserDetails()
       .then((res) => {
+        console.log(res);
         authCtx.updateUserDetails(res.user);
       })
       .catch((err) => {
