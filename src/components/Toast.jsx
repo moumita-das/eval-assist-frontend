@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AlertTriangle } from "lucide-react";
 
-const Toast = ({ type, text }) => {
+const Toast = ({ type, text, hideModal }) => {
   const [show, setShow] = useState(false);
   useEffect(() => {
     setShow(true);
@@ -39,6 +39,7 @@ const Toast = ({ type, text }) => {
               aria-label="Close"
               onClick={() => {
                 setShow(false);
+                hideModal();
               }}
             ></button>
           </div>

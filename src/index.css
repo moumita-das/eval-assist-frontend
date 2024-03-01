@@ -6,7 +6,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
+#root,
+#app-modal,
+.modal-dialog {
   --color-primary: #756ab6;
   --color-secondary: #ac87c5;
   --color-light: #e0aed0;
@@ -22,6 +24,7 @@ body,
 #root,
 .App {
   height: 100%;
+  scrollbar-gutter: stable;
 }
 
 .form-control {
@@ -49,4 +52,32 @@ body,
 
 .info {
   color: var(--color-info);
+}
+.hr {
+  flex: 1;
+  border: solid 1px black;
+  height: 0;
+}
+/* width */
+::-webkit-scrollbar {
+  margin: 1em;
+  width: 2px;
+  height: 4px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8a5f5f;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #951111;
 }

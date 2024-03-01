@@ -1,40 +1,36 @@
 .editor-menubar {
-    background-color: #fafafa;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 2px -4px 4px -1px;
+  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.06) 2px -4px 4px -1px;
 
-    .btn {
-        background-color: transparent;
-        border-radius: 0;
-        padding: 0.2em 1em;
+  .btn {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0.2em 1em;
 
-
-        &.is-active {
-            background-color: rgb(214, 214, 214);
-        }
-
+    &.is-active {
+      background-color: rgb(214, 214, 214);
     }
-
-
+  }
 }
 
+.tiptap,
+textarea {
+  border: solid 1px #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  padding: 1em;
+  width: 100%;
+  height: inherit;
+  &:focus-visible {
+    outline: 0;
+  }
 
-.tiptap {
-    border: solid 1px #fafafa;
-    border-top: none;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  p {
+    margin: 0;
 
     &:focus-visible {
-        outline: 0;
-        border-top: 0;
-        padding: 1em;
+      outline: 0;
     }
-
-    p {
-        margin: 0;
-
-        &:focus-visible {
-            outline: 0;
-        }
-    }
+  }
 }

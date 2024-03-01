@@ -27,14 +27,12 @@ function App() {
     if (!authCtx.isLoggedIn) return;
     AuthService.getUserDetails()
       .then((res) => {
-        console.log(res);
         authCtx.updateUserDetails(res.user);
       })
       .catch((err) => {
         authCtx.logout();
       });
   }, [authCtx.isLoggedIn]);
-  console.log(authCtx);
   return (
     <div className="App">
       <BrowserRouter>

@@ -1,0 +1,28 @@
+.dropdown-wrapper {
+  position: relative;
+  input {
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+    border: solid 1px black;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    li {
+      padding: 0.5em;
+      font-size: 0.9em;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--color-secondary);
+      }
+      .btn {
+        background-color: inherit;
+        padding: 0;
+        color: inherit;
+        width: 100%;
+      }
+    }
+  }
+}

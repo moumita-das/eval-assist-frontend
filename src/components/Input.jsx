@@ -1,6 +1,14 @@
 import React from "react";
 
-const Input = ({ id, label, value, changeHandler, type, placeHolder }) => {
+const Input = ({
+  id,
+  label,
+  value,
+  changeHandler,
+  type,
+  placeHolder,
+  extraStyles,
+}) => {
   return (
     <div className="form-group">
       {label && <label htmlFor={id}>{label}</label>}
@@ -12,6 +20,7 @@ const Input = ({ id, label, value, changeHandler, type, placeHolder }) => {
         type={type}
         onChange={changeHandler}
         autoComplete="new-password"
+        style={{ ...extraStyles }}
       />
     </div>
   );

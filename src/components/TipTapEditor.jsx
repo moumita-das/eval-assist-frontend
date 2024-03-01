@@ -54,7 +54,7 @@ const TipTapMenubar = ({ editor }) => {
   );
 };
 
-const TiptapEditor = ({ text, updateText }) => {
+const TiptapEditor = ({ text, updateText, placeholder }) => {
   const editor = useEditor({
     extensions: [StarterKit],
     content: `${text}`,
@@ -65,10 +65,16 @@ const TiptapEditor = ({ text, updateText }) => {
   });
 
   return (
-    <div className="!mt-2 border border-gray-300 shadow rounded">
-      <TipTapMenubar editor={editor} />
-      <EditorContent editor={editor} />
-    </div>
+    // <div className=" border border-gray-300 shadow rounded">
+    <textarea
+      // rows={5}
+      value={text}
+      onChange={(e) => {
+        updateText(e.target.value);
+      }}
+      placeholder={placeholder}
+    />
+    // </div>
   );
 };
 

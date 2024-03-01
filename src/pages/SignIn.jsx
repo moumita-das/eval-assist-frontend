@@ -64,8 +64,10 @@ const SignIn = () => {
               }}
               id="password-input"
             />
-            <a className="info">Forgot your password?</a>
-            <Button text="LOG IN" clickHandler={loginBtnClicked} />
+            <div className="controls">
+              <a className="info">Forgot your password?</a>
+              <Button text="LOG IN" clickHandler={loginBtnClicked} />
+            </div>
           </div>
           <div className="right-content">
             <h2>Lorem Ipsum</h2>
